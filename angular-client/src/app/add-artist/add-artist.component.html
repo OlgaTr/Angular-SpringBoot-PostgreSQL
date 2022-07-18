@@ -1,0 +1,12 @@
+<h3>Add artist</h3>
+<form (ngSubmit) = "onSubmit()">
+  <div>
+    <label>First name</label>
+    <input type='text' [(ngModel)]="artist.firstName" name="firstName">
+  </div>
+  <div>
+    <label>Last name</label>
+    <input type='text' [(ngModel)]="artist.lastName" name="lastName">
+  </div>
+  <button type="submit">Add artist</button>
+</form>

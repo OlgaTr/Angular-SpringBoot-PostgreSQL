@@ -1,0 +1,16 @@
+<h2>Collections</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let work of works">
+      <td>{{work.id}}</td>
+      <td>{{work.title}}</td>
+    </tr>
+  </tbody>
+  <img class='cafe-terrace' src='assets/images/vincent-van-gogh-cafe-terrace.jpeg' alt="...">
+</table>

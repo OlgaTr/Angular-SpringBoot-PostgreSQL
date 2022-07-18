@@ -1,10 +1,10 @@
-package com.spring.artgallery.springboot.models;
+package com.spring.artgallery.springboot.entities;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "collections")
-public class Collection {
+@Table(name = "exhibitions")
+public class ExhibitionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
