@@ -1,0 +1,16 @@
+<h3>Add work</h3>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label>title</label>
+    <input type='text' [(ngModel)]="work.title" name="title">
+  </div>
+  <div>
+    <label>Date of creation</label>
+    <input type="text" [(ngModel)]="work.creationDate" name="creationDate">
+  </div>
+  <div>
+    <label>Description</label>
+    <input type="text" [(ngModel)]="work.description" name="description">
+  </div>
+  <button type="submit">Add work</button>
+</form>

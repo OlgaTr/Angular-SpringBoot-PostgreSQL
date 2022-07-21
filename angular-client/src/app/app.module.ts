@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { AddWorkComponent } from './add-work/add-work.component';
 import { AddArtistComponent } from './add-artist/add-artist.component';
 import { FormsModule } from "@angular/forms";
+import { ArtistsListComponent } from './artists-list/artists-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from "@angular/forms";
     WorksListComponent,
     AboutComponent,
     AddWorkComponent,
-    AddArtistComponent
+    AddArtistComponent,
+    ArtistsListComponent
   ],
   imports: [
     BrowserModule,

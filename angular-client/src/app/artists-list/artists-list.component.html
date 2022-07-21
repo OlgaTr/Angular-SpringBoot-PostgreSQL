@@ -1,0 +1,20 @@
+<p>Artists</p>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+<!--      <th/>-->
+<!--      <th/>-->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let artist of artists">
+      <td>{{artist.id}}</td>
+      <td>{{artist.firstName}} {{artist.lastName}}</td>
+      <td><button>Explore works</button></td>
+      <td><button><a [routerLink]="['add-work', artist.id]">Add work</a></button></td>
+      <td><button>Delete</button></td>
+    </tr>
+  </tbody>
+</table>

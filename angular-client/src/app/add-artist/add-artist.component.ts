@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Artist} from "../artist";
 import {ArtistService} from "../artist.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-add-artist',
@@ -16,10 +17,9 @@ export class AddArtistComponent implements OnInit {
   }
 
   onSubmit() {
-    this.artistService.addArtist(this.artist).subscribe(data => {
-      console.log(data);
-    },
-      error => console.log(error));
+    this.artistService.addArtist(this.artist).subscribe({
+      next: (data) => console.log(data),
+      error: (error) => console.log(error)
+    });
   }
-
 }

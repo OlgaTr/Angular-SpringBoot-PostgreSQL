@@ -14,14 +14,18 @@ public class WorkEntity {
     @JoinColumn(name = "artist_id")
     private ArtistEntity artistEntity;
     private String title;
+    private String creationDate;
+    private String description;
 
     public WorkEntity() {
     }
 
-    public WorkEntity(long id, ArtistEntity artistEntity, String title) {
+    public WorkEntity(long id, ArtistEntity artistEntity, String title, String creationDate, String description) {
         this.id = id;
         this.artistEntity = artistEntity;
         this.title = title;
+        this.creationDate = creationDate;
+        this.description = description;
     }
 
     public void setId(long id) {
@@ -44,11 +48,15 @@ public class WorkEntity {
         this.artistEntity = artistEntity;
     }
 
-    @Override
-    public String toString() {
-        return "WorkEntity{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                '}';
+    public ArtistEntity getArtistEntity() {
+        return artistEntity;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

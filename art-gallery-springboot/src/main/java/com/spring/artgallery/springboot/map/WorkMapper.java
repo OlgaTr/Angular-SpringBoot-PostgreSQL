@@ -13,20 +13,24 @@ public class WorkMapper {
         this.artistRepository = artistRepository;
     }
 
-    public WorkEntity WorkToWorkEntity(Work work) {
+    public WorkEntity workToWorkEntity(Work work) {
         WorkEntity workEntity = new WorkEntity(
                 work.getId(),
                 artistRepository.findById(work.getAuthorId()),
-                work.getTitle()
+                work.getTitle(),
+                work.getCreationDate(),
+                work.getDescription()
         );
         return workEntity;
     }
 
-    public Work WorkEntityToWork(WorkEntity workEntity) {
+    public Work workEntityToWork(WorkEntity workEntity) {
         Work work = new Work(
                 workEntity.getId(),
                 workEntity.getArtist().getId(),
-                workEntity.getTitle()
+                workEntity.getTitle(),
+                workEntity.getCreationDate(),
+                workEntity.getDescription()
         );
         return work;
     }

@@ -15,4 +15,10 @@ export class ArtistService {
   addArtist(artist: Artist): Observable<Object> {
     return this.httpClient.post(`${this.baseUrl}`, artist);
   }
+
+  getArtists(): Observable<Artist[]> {
+    return this.httpClient.get<Artist[]>(`${this.baseUrl}`);
+  }
+
+  // addWorkToArtist
 }

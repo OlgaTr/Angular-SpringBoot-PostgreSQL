@@ -12,7 +12,11 @@ export class WorkService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCollectionList(): Observable<Work[]> {
+  getWorks(): Observable<Work[]> {
     return this.httpClient.get<Work[]>(`${this.baseUrl}`);
-}
+  }
+
+  addWork(artistId: number, work: Work): Observable<Object> {
+    return this.httpClient.post(`${this.baseUrl}/${artistId}`, work);
+  }
 }

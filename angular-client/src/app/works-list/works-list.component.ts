@@ -18,7 +18,7 @@ export class WorksListComponent implements OnInit {
   }
 
   private getWorks() {
-    this.workService.getCollectionList().subscribe(data => {
+    this.workService.getWorks().subscribe(data => {
       this.works = data;
     })
   }

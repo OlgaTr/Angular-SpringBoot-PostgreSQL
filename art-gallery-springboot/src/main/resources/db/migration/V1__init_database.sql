@@ -9,6 +9,8 @@ CREATE TABLE artists (
 CREATE TABLE works (
     id BIGSERIAL PRIMARY KEY NOT NULL,
     title VARCHAR,
+    creation_date VARCHAR,
+    description VARCHAR,
     artist_id INTEGER REFERENCES artists(id) NOT NULL
 );
 

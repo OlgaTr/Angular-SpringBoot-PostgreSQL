@@ -26,7 +26,7 @@ public class WorkServiceImpl implements WorkService{
     @Override
     public List<Work> findAll() {
         return workRepository.findAll().stream()
-                .map(we -> workMapper.WorkEntityToWork(we))
+                .map(workMapper::workEntityToWork)
                 .collect(Collectors.toList());
     }
 
