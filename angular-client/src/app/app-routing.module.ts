@@ -9,7 +9,7 @@ import {ArtistsListComponent} from "./artists-list/artists-list.component";
 const routes: Routes = [
   // {path: 'about', component:AboutComponent},
   {path: 'works', component: WorksListComponent},
-  {path: 'add-artist', component: AddArtistComponent},
+  {path: 'artists/add-artist', component: AddArtistComponent},
   {path: 'artists/add-work/:artistId', component: AddWorkComponent},
   {path: 'artists', component: ArtistsListComponent},
   {path: '', redirectTo: 'about', pathMatch: 'full'}

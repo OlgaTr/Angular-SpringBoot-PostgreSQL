@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Work} from "../work";
 import {WorkService} from "../work.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-work',
@@ -13,7 +13,7 @@ export class AddWorkComponent implements OnInit {
   work: Work = new Work();
   // artistId: number | undefined;
 
-  constructor(private workService: WorkService, private route: ActivatedRoute) { }
+  constructor(private workService: WorkService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +24,8 @@ export class AddWorkComponent implements OnInit {
     console.log(artistId);
     this.workService.addWork(artistId, this.work).subscribe({
       next: (data) => console.log(data),
-      error: (error) => console.error(error)
+      error: (error) => console.error(error),
+      complete: () => this.router.navigate(['/artists'])
     });
   }
 }

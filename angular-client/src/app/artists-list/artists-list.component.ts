@@ -23,12 +23,4 @@ export class ArtistsListComponent implements OnInit {
       this.artists = data;
     })
   }
-
-  navigateTo(path: string) {
-    this.router.navigate([path]);
-  }
-
-  addWorkToArtist(id: number) {
-
-  }
 }

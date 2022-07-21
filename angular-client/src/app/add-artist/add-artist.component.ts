@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Artist} from "../artist";
 import {ArtistService} from "../artist.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-artist',
@@ -11,7 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 export class AddArtistComponent implements OnInit {
 
   artist: Artist = new Artist();
-  constructor(private artistService: ArtistService) { }
+  constructor(private artistService: ArtistService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +19,8 @@ export class AddArtistComponent implements OnInit {
   onSubmit() {
     this.artistService.addArtist(this.artist).subscribe({
       next: (data) => console.log(data),
-      error: (error) => console.log(error)
+      error: (error) => console.log(error),
+      complete: () => this.router.navigate(['/artists'])
     });
   }
 }
