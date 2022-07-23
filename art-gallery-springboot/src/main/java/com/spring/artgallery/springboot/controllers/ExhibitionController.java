@@ -1,10 +1,8 @@
 package com.spring.artgallery.springboot.controllers;
 
-import com.spring.artgallery.springboot.entities.ExhibitionEntity;
+import com.spring.artgallery.springboot.models.Exhibition;
 import com.spring.artgallery.springboot.services.ExhibitionService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +16,17 @@ public class ExhibitionController {
     }
 
     @GetMapping("/exhibitions")
-    public List<ExhibitionEntity> findExhibitions() {
+    public List<Exhibition> findExhibitions() {
         return exhibitionService.listExhibitions();
+    }
+
+    @PostMapping("/exhibitions")
+    public void createExhibition(@RequestBody Exhibition exhibition) {
+        exhibitionService.addExhibition(exhibition);
+    }
+
+    @PutMapping("/exhibitions/{exhibitionId}")
+    public void addWorkToExhibition(@PathVariable long exhibitionId, @RequestBody Long[] worksId) {
+        exhibitionService.addWorksToExhibition(exhibitionId, worksId);
     }
 }

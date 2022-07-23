@@ -1,6 +1,8 @@
 package com.spring.artgallery.springboot.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "works")
@@ -16,6 +18,9 @@ public class WorkEntity {
     private String title;
     private String creationDate;
     private String description;
+
+    @ManyToMany(mappedBy = "works")
+    private Set<ExhibitionEntity> exhibitionEntities = new HashSet<>();
 
     public WorkEntity() {
     }
@@ -58,5 +63,15 @@ public class WorkEntity {
 
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public String toString() {
+        return "WorkEntity{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", creationDate='" + creationDate + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

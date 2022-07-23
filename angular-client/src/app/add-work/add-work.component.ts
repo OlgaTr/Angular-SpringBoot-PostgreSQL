@@ -11,7 +11,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class AddWorkComponent implements OnInit {
 
   work: Work = new Work();
-  // artistId: number | undefined;
 
   constructor(private workService: WorkService, private route: ActivatedRoute, private router: Router) { }
 
@@ -21,7 +20,6 @@ export class AddWorkComponent implements OnInit {
   onSubmit() {
     const routeParams = this.route.snapshot.paramMap;
     const artistId = Number(routeParams.get('artistId'));
-    console.log(artistId);
     this.workService.addWork(artistId, this.work).subscribe({
       next: (data) => console.log(data),
       error: (error) => console.error(error),

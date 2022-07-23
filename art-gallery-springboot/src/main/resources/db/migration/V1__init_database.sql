@@ -16,5 +16,13 @@ CREATE TABLE works (
 
 CREATE TABLE exhibitions (
     id BIGSERIAL PRIMARY KEY NOT NULL,
+    title VARCHAR,
+    author VARCHAR,
+    creation_date DATE,
     description VARCHAR
-)
+);
+
+CREATE TABLE exhibition_work (
+    exhibition_id BIGINT,
+    work_id BIGINT
+);

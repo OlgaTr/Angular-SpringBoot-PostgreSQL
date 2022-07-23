@@ -1,0 +1,16 @@
+<p>Add exhibition</p>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label>title</label>
+    <input type="text" [(ngModel)]="exhibition.title" name="title">
+  </div>
+  <div>
+    <label>author</label>
+    <input type="text" [(ngModel)]="exhibition.author" name="author">
+  </div>
+  <div>
+    <label>Description</label>
+    <input type="text" [(ngModel)]="exhibition.description" name="description">
+  </div>
+  <button type="submit">Create Exhibition</button>
+</form>

@@ -10,6 +10,9 @@ import { AddWorkComponent } from './add-work/add-work.component';
 import { AddArtistComponent } from './add-artist/add-artist.component';
 import { FormsModule } from "@angular/forms";
 import { ArtistsListComponent } from './artists-list/artists-list.component';
+import { ExhibitionsListComponent } from './exhibitions-list/exhibitions-list.component';
+import { AddExhibitionComponent } from './add-exhibition/add-exhibition.component';
+import { AddWorkToExhibitionComponent } from './add-work-to-exhibition/add-work-to-exhibition.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ArtistsListComponent } from './artists-list/artists-list.component';
     AboutComponent,
     AddWorkComponent,
     AddArtistComponent,
-    ArtistsListComponent
+    ArtistsListComponent,
+    ExhibitionsListComponent,
+    AddExhibitionComponent,
+    AddWorkToExhibitionComponent
   ],
   imports: [
     BrowserModule,

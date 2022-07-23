@@ -1,0 +1,15 @@
+<p>Add work to exhibition</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let work of works">
+      <td>{{work.title}}</td>
+      <td><input type="checkbox" ngModel (ngModelChange)="onChange(work.id, $event)" name="checkbox"></td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="onSubmit()">Add Works</button>

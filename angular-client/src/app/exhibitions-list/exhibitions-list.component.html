@@ -1,0 +1,23 @@
+<p>Exhibitions</p>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Author</th>
+      <th>Date of Creation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let exhibition of exhibitions">
+      <td>{{exhibition.id}}</td>
+      <td>{{exhibition.title}}</td>
+      <td>{{exhibition.description}}</td>
+      <td>{{exhibition.author}}</td>
+      <td>{{exhibition.creationDate}}</td>
+      <td><a [routerLink]="['add-work', exhibition.id]">Add Work</a></td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="add-exhibition">Create Exhibition</a>

@@ -36,7 +36,7 @@ public class WorkServiceImpl implements WorkService{
         artistEntity.addWork(workEntity);
         workEntity.setArtist(artistEntity);
         artistRepository.saveAndFlush(artistEntity);
-        workRepository.saveAndFlush(workEntity);
+//        workRepository.saveAndFlush(workEntity);
     }
 
     @Override
