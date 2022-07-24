@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Exhibition} from "../exhibition";
 import {ExhibitionService} from "../exhibition.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-exhibition',
@@ -11,7 +12,7 @@ export class AddExhibitionComponent implements OnInit {
 
   exhibition: Exhibition = new Exhibition();
 
-  constructor(private exhibitionService: ExhibitionService) { }
+  constructor(private exhibitionService: ExhibitionService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +20,8 @@ export class AddExhibitionComponent implements OnInit {
   onSubmit() {
     this.exhibitionService.createExhibition(this.exhibition).subscribe({
       next: value => console.log(value),
-      error: err => console.error(err)
+      error: err => console.error(err),
+      complete: () => this.router.navigate(['exhibitions'])
     })
   }
 

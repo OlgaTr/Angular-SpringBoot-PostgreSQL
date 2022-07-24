@@ -20,5 +20,7 @@ export class ArtistService {
     return this.httpClient.get<Artist[]>(`${this.baseUrl}`);
   }
 
-  // addWorkToArtist
+  deleteArtistById(artistId: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseUrl}/${artistId}`);
+  }
 }

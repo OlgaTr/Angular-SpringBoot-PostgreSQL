@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface ArtistService {
     List<Artist> findAll();
+    Artist getArtistById(long artistId);
     void addArtist(ArtistEntity artistEntity);
+    void deleteById(long artistId);
     void clearAll();
 }

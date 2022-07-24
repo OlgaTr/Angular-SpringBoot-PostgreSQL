@@ -23,4 +23,14 @@ export class ArtistsListComponent implements OnInit {
       this.artists = data;
     })
   }
+
+  deleteArtist(artistId: number | undefined) {
+    if (artistId != null) {
+      this.artistService.deleteArtistById(artistId).subscribe({
+        next: value => console.log(value),
+        error: err => console.error(err),
+        complete: () => this.router.navigate(['/artists'])
+      })
+    }
+  }
 }

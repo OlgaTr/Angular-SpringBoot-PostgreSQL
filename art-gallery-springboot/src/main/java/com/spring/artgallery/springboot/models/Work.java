@@ -2,14 +2,14 @@ package com.spring.artgallery.springboot.models;
 
 public class Work {
     private long id;
-    private long authorId;
+    private Artist artist;
     private String title;
     private String creationDate;
     private String description;
 
-    public Work(long id, long authorId, String title, String creationDate, String description) {
+    public Work(long id, Artist artist, String title, String creationDate, String description) {
         this.id = id;
-        this.authorId = authorId;
+        this.artist = artist;
         this.title = title;
         this.creationDate = creationDate;
         this.description = description;
@@ -19,8 +19,8 @@ public class Work {
         return id;
     }
 
-    public long getAuthorId() {
-        return authorId;
+    public Artist getArtist() {
+        return artist;
     }
 
     public String getTitle() {

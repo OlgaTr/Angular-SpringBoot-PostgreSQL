@@ -21,9 +21,19 @@ public class ArtistController {
         return artistService.findAll();
     }
 
+    @GetMapping("/artists/{artistId}")
+    public Artist getArtistById(@PathVariable long artistId) {
+        return artistService.getArtistById(artistId);
+    }
+
     @PostMapping("/artists")
     public void addArtist(@RequestBody ArtistEntity artistEntity) {
         artistService.addArtist(artistEntity);
+    }
+
+    @DeleteMapping("/artists/{artistId}")
+    public void deleteArtistById(@PathVariable long artistId) {
+        artistService.deleteById(artistId);
     }
 
     @DeleteMapping("/artists")

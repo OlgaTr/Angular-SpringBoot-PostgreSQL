@@ -16,7 +16,8 @@
       <td>{{exhibition.description}}</td>
       <td>{{exhibition.author}}</td>
       <td>{{exhibition.creationDate}}</td>
-      <td><a [routerLink]="['add-work', exhibition.id]">Add Work</a></td>
+      <td><a [routerLink]="['explore-exhibition', exhibition.id]">Explore</a></td>
+      <td><button (click)="delete(exhibition.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>

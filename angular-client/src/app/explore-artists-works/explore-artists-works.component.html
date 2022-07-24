@@ -1,0 +1,15 @@
+<p>Art Works</p>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th> Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let work of works">
+      <td>{{work.id}}</td>
+      <td>{{work.title}}</td>
+    </tr>
+  </tbody>
+</table>

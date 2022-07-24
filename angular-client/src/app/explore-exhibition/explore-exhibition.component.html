@@ -1,4 +1,4 @@
-<h2>Art Works</h2>
+<p>Exhibition</p>
 <table>
   <thead>
     <tr>
@@ -9,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor = "let work of works">
+    <tr *ngFor="let work of works">
       <td>{{work.id}}</td>
       <td>{{work.title}}</td>
       <td>{{work.artist.firstName}} {{work.artist.lastName}}</td>
       <td>{{work.creationDate}}</td>
     </tr>
   </tbody>
-<!--  <img class='cafe-terrace' src='assets/images/vincent-van-gogh-cafe-terrace.jpeg' alt="...">-->
 </table>
+<a [routerLink]="['add-work', exhibitionId]">Add Work</a>

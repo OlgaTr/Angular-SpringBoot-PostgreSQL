@@ -8,6 +8,8 @@ import java.util.List;
 public interface WorkService {
     List<Work> findAll();
     void addWork(long artistId, WorkEntity workEntity);
-    void deleteWork(long workId);
+    List<Work> getWorksByArtist(long artistId);
+    List<Work> getWorksByExhibitionId(long exhibitionId);
+    void deleteById(long workId);
     void deleteAll();
 }

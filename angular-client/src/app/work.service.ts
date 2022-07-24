@@ -16,6 +16,10 @@ export class WorkService {
     return this.httpClient.get<Work[]>(`${this.baseUrl}`);
   }
 
+  getWorksByArtistId(artistId: number): Observable<Work[]> {
+    return this.httpClient.get<Work[]>(`${this.baseUrl}/${artistId}`);
+  }
+
   addWork(artistId: number, work: Work): Observable<Object> {
     return this.httpClient.post(`${this.baseUrl}/${artistId}`, work);
   }

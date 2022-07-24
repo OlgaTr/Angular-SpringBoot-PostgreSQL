@@ -40,8 +40,22 @@ public class WorkServiceImpl implements WorkService{
     }
 
     @Override
-    public void deleteWork(long workId) {
+    public List<Work> getWorksByArtist(long artistId) {
+        return workRepository.findByArtistId(artistId).stream()
+                .map(workMapper::workEntityToWork)
+                .collect(Collectors.toList());
+    }
 
+    @Override
+    public List<Work> getWorksByExhibitionId(long exhibitionId) {
+        return workRepository.findByExhibitionId(exhibitionId).stream()
+                .map(workMapper::workEntityToWork)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteById(long workId) {
+        workRepository.deleteById(workId);
     }
 
     @Override

@@ -20,13 +20,23 @@ public class ArtistServiceImpl implements ArtistService{
     @Override
     public List<Artist> findAll() {
         return artistRepository.findAll().stream()
-                .map(ArtistMapper :: artistEntityToArtist)
+                .map(ArtistMapper:: artistEntityToArtist)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Artist getArtistById(long artistId) {
+        return ArtistMapper.artistEntityToArtist(artistRepository.findById(artistId));
     }
 
     @Override
     public void addArtist(ArtistEntity artistEntity) {
         artistRepository.saveAndFlush(artistEntity);
+    }
+
+    @Override
+    public void deleteById(long artistId) {
+        artistRepository.deleteById(artistId);
     }
 
     @Override

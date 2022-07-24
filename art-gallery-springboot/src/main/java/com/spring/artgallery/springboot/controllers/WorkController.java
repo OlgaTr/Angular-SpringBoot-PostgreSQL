@@ -21,8 +21,18 @@ public class WorkController {
         return workService.findAll();
     }
 
+    @GetMapping("/works/{artistId}")
+    public List<Work> getWorksByArtistId(@PathVariable long artistId) {
+        return workService.getWorksByArtist(artistId);
+    }
+
     @PostMapping("/works/{artistId}")
     public void addWork(@PathVariable long artistId, @RequestBody WorkEntity workEntity) {
         workService.addWork(artistId, workEntity);
+    }
+
+    @DeleteMapping("/works/{workId}")
+    public void deleteWorkById(@PathVariable long workId) {
+        workService.deleteById(workId);
     }
 }

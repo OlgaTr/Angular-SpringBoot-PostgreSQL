@@ -44,4 +44,9 @@ public class ExhibitionServiceImpl implements ExhibitionService {
                 .forEach(work -> exhibition.addWorkToExhibition(work.get()));
         exhibitionRepository.saveAndFlush(exhibition);
     }
+
+    @Override
+    public void deleteById(long exhibitionId) {
+        exhibitionRepository.deleteById(exhibitionId);
+    }
 }

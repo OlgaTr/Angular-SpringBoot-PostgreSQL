@@ -16,7 +16,7 @@ public class WorkMapper {
     public WorkEntity workToWorkEntity(Work work) {
         WorkEntity workEntity = new WorkEntity(
                 work.getId(),
-                artistRepository.findById(work.getAuthorId()),
+                artistRepository.findById(work.getArtist().getId()),
                 work.getTitle(),
                 work.getCreationDate(),
                 work.getDescription()
@@ -27,7 +27,7 @@ public class WorkMapper {
     public Work workEntityToWork(WorkEntity workEntity) {
         Work work = new Work(
                 workEntity.getId(),
-                workEntity.getArtist().getId(),
+                ArtistMapper.artistEntityToArtist(workEntity.getArtist()),
                 workEntity.getTitle(),
                 workEntity.getCreationDate(),
                 workEntity.getDescription()

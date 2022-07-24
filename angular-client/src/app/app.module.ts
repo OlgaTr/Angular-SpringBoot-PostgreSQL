@@ -13,6 +13,8 @@ import { ArtistsListComponent } from './artists-list/artists-list.component';
 import { ExhibitionsListComponent } from './exhibitions-list/exhibitions-list.component';
 import { AddExhibitionComponent } from './add-exhibition/add-exhibition.component';
 import { AddWorkToExhibitionComponent } from './add-work-to-exhibition/add-work-to-exhibition.component';
+import { ExploreArtistsWorksComponent } from './explore-artists-works/explore-artists-works.component';
+import { ExploreExhibitionComponent } from './explore-exhibition/explore-exhibition.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AddWorkToExhibitionComponent } from './add-work-to-exhibition/add-work-
     ArtistsListComponent,
     ExhibitionsListComponent,
     AddExhibitionComponent,
-    AddWorkToExhibitionComponent
+    AddWorkToExhibitionComponent,
+    ExploreArtistsWorksComponent,
+    ExploreExhibitionComponent
   ],
   imports: [
     BrowserModule,
